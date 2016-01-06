@@ -3,8 +3,67 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<style type="text/css">
+
+/* 头部样式*/
+.loginHead {
+	border: 100px outset black;
+	border-bottom-color: #fc5151;
+	border-background: #f4fdff;
+	background-color: #cfffa4;
+}
+/*整个页面的背景样式*/
+body {
+	background-color: #e8ffef
+}
+
+/*表单样式*/
+form table{
+	width: 100%
+}
+
+form table td{
+	width: 50%
+}
+
+.right_td{
+	align-content: center;
+	width: 50%;
+	
+}
+
+.left_td{
+	align-content:center
+}
+</style>
 </head>
-<body>
-	welcome to manyouyou order manager system
+<body style="">
+	<div class="loginHead">
+		<p align="center" style="font: 4">welcome to order manager system</p>
+
+	</div>
+	<div style="margin-top: 100px">
+		<form action="login.html" method="post" accept-charset="utf-8">
+			<table>
+				<tr>
+					<td align="right" class="right_td">username:</td>
+					<td align="left" class="left_td"><input type="text" name="name" /></td>
+				</tr>
+				<tr>
+					<td align="right" class="right_td">password:</td>
+					<td class="left_td"><input type="password" name="password" /></td>
+				</tr>
+				<tr>
+					<td align="right" class="right_td">
+						<input type="button" value="regist"/>
+					</td>
+					<td class="left_td" align="left">
+						<input type="submit" value="submit"/>
+					</td>		
+				</tr>
+			</table>
+					</form>
+
+	</div>
 </body>
 </html>
