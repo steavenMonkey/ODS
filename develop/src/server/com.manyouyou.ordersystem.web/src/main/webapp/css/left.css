@@ -1,0 +1,24 @@
+@CHARSET "UTF-8";
+
+
+.leftdiv{
+	width: 70px;
+	height: 130px;
+	border: 1px solid black;
+	margin-top: 50px;
+	
+}
+
+.leftdiv table tr{
+	width: 80px;
+}
+
+.leftdiv table td{
+	text-align: left;
+	background-color: #e8ffef;
+	text-align: center;
+	border: none;
+	line-height: 80px;
+	
+	
+}

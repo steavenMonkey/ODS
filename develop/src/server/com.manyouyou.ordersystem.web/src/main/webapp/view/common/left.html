@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link href="../../css/left.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../js/jquery-1.11.3.js"></script>
+<script type="text/javascript">
+	$(function() {
+		var $myorder = $("#myorder");
+		var $orderquery = $("#orderquery");
+		var $neworder = $("#neworder");
+		//鼠标划过我的订单，改变其背景颜色
+		$myorder.hover(function() {
+			changeBackgroundColor("myorder", "#699dff")
+		}, function() {
+			changeBackgroundColor("myorder", "#e8ffef")
+		});
+		//鼠标划过订单查询，改变其背景颜色
+		$orderquery.hover(function() {
+			changeBackgroundColor("orderquery", "#699dff")
+		}, function() {
+			changeBackgroundColor("orderquery", "#e8ffef")
+		});
+		//鼠标划过新增订单，改变其背景颜色
+		$neworder.hover(function() {
+			changeBackgroundColor("neworder", "#699dff")
+		}, function() {
+			changeBackgroundColor("neworder", "#e8ffef")
+		});
+	});
+	
+	//公共方法，改变背景颜色
+	function changeBackgroundColor(id, color) {
+		$("#" + id).css("background-color", color);
+	}
+</script>
+
+</head>
+<body>
+	
+	<!--页面左侧导航栏-->
+	<div class="leftdiv">
+		<table>
+			<tr>
+				<td id="myorder">我的订单</td> 
+			</tr>
+			<tr>
+				<td id="orderquery">订单查询</td> 
+			</tr>
+			<tr>
+				<td id="neworder">新增订单</td> 
+			</tr>
+		</table>
+	</div>
+</body>
+</html>

@@ -3,9 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link href="../../css/head.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../js/jquery-1.11.3.js"></script>
-
 <script type="text/javascript">
 	$(function() {
 		var $firstpage = $("#firstpage");
@@ -67,9 +65,59 @@
 </script>
 
 
+<style type="text/css">
+
+.topdiv{
+	width: 100%;
+	height: 50px;
+	border: 1px solid black;
+}
+
+.topdiv table {
+	width: 100%;
+}
+
+.topdiv table td {
+	align-content: center;
+	background-color: #e8ffef;
+	text-align: center;
+	border: none;
+	line-height: 40px;
+}
+
+#ftd {
+	line-height: 10px;
+	text-align: left;
+	background-color: #ffffff;
+}
+
+
+.leftdiv{
+	width: 70px;
+	height: 130px;
+	border: 1px solid black;
+	margin-top: 50px;
+	
+}
+
+.leftdiv table tr{
+	width: 80px;
+}
+
+.leftdiv table td{
+	text-align: left;
+	background-color: #e8ffef;
+	text-align: center;
+	border: none;
+	line-height: 80px;
+	
+	
+}
+
+</style>
 </head>
 <body>
-	<!--页面头部-->
+	<!--页面头-->
 	<div class="topdiv">
 		<table>
 			<tr>
@@ -84,5 +132,19 @@
 		</table>
 	</div>
 	
+	<!--页面左侧导航栏-->
+	<div class="leftdiv">
+		<table>
+			<tr>
+				<td id="myorder">我的订单</td> 
+			</tr>
+			<tr>
+				<td id="orderquery">订单查询</td> 
+			</tr>
+			<tr>
+				<td id="neworder">新增订单</td> 
+			</tr>
+		</table>
+	</div>
 </body>
 </html>
