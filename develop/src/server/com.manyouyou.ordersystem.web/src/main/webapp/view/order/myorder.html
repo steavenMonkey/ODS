@@ -114,6 +114,40 @@
 	
 }
 
+
+
+.myorderdiv{
+	margin-top: -130px;
+	margin-left: 80px;
+	border: 1px solid black;
+}
+
+.myorderdiv table tr{
+	border: 1px solid black;
+	width: 100%;
+	
+}
+
+.myorderdiv table td{
+	text-align: center;
+	border: 1px solid black;
+	width: auto;
+	
+}
+
+#bottomtd{
+	text-align: center;
+	line-height: 30px;
+	
+}
+
+#bottomtd input{
+	line-height: 20px;
+	width: 100px;
+	font-size: 15px;
+	font-style: italic;
+}
+
 </style>
 </head>
 <body>
@@ -145,6 +179,44 @@
 				<td id="neworder">新增订单</td> 
 			</tr>
 		</table>
+	</div>
+	<!-- 我的订单页 -->
+	<div class="myorderdiv">
+		<table cellpadding="0" cellspacing="0">
+			<tr>
+				<td><input type="checkbox" >全选</td>
+				<td>产品</td>
+				<td>数量(箱)</td>
+				<td>单价(元)</td>
+				<td>总价(元)</td>
+				<td>客户</td>
+				<td>收获地址</td>
+				<td>联系方式</td>
+				<td>是否发货</td>
+				<td>是否付款</td>
+				<td>下单日期</td>
+			</tr>
+			<tr>
+				<td><input type="checkbox" ></td>
+				<td>黄橙</td>
+				<td>2</td>
+				<td>98</td>
+				<td>196</td>
+				<td>张三</td>
+				<td>广州市番禺区落西新城海龙湾B座201</td>
+				<td>18521709574</td>
+				<td><input type="checkbox" checked="checked" readonly="readonly"></td>
+				<td><input type="checkbox" checked="checked" readonly="readonly"></td>
+				<td>2015-12-31</td>
+			</tr>
+			<tr>
+				<td id="bottomtd" colspan="11">
+					<input type="button" value="删除" name="deleteOrder"/>
+					<input type="button" value="新增" name="addOrder"/>
+					<input type="button" value="修改" name="updateOrder"/>
+				</td>
+			</tr>
+		</table>	
 	</div>
 </body>
 </html>
