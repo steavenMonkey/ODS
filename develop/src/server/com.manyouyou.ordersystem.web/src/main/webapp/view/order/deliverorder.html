@@ -267,12 +267,10 @@
 #deliverButton{
 	text-align: center;
 	height: 30px;
-	width: 80px;
 }
 
-#deleverButton input{
-	height: 30px;
-	width: 80px;
+#deliverButton input{
+	width: 60px;
 }
 </style>
 </head>
@@ -319,11 +317,8 @@
 					<td>客户</td>
 					<td>收获地址</td>
 					<td>联系方式</td>
-					<td>是否发货</td>
 					<td>是否付款</td>
 					<td>下单日期</td>
-					<td>快递公司</td>
-					<td>快递单号</td>
 					<td>备注</td>
 				</tr>
 				<tr>
@@ -335,10 +330,7 @@
 					<td>广州市番禺区落西新城海龙湾B座201</td>
 					<td>18521709574</td>
 					<td><input type="checkbox" checked="checked" readonly="readonly"></td>
-					<td><input type="checkbox" checked="checked" readonly="readonly"></td>
 					<td>2015-12-31</td>
-					<td>顺丰快递</td>
-					<td>898987383</td>
 					<td>隔壁村老王的邻居</td>
 					<td>
 						<input type="hidden" value="orderid"/>
@@ -354,7 +346,7 @@
 				</tr>
 				<tr>
 					<td colspan="14" id="deliverButton">
-						<input type="submit" value="发货/修改快递单" name="deliver">
+						<input type="submit" value="发货" name="deliver">
 					</td>
 				</tr>
 			</table>
