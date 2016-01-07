@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<script type="text/javascript" src="../../../js/jquery-1.11.3.js"></script>
+<script type="text/javascript" src="../../js/jquery-1.11.3.js"></script>
 <script type="text/javascript">
 	$(function() {
 		var $firstpage = $("#firstpage");
@@ -223,15 +223,18 @@
 	＃border: 1px solid black;
 }
 
-#newOrderButton{
+.neworderdiv table td{
+	#border: 1px solid black;
+}
+
+#saveModifyButton{
 	line-height: 30px;
 	text-align: center;
 	
 }
 
-#newOrderButton input{
+#saveModifyButton input{
 	width: 60px;
-	margin-top: 10px;
 }
 </style>
 </head>
@@ -293,7 +296,16 @@
 					<td>是否付款：<input type="checkbox" name="hasPay"/> </td>
 				</tr>
 				<tr>
+					<td>是否发货：<input type="checkbox" name="hasDeliver"/> </td>
+				</tr>
+				<tr>
 					<td>联系方式：<input type="text" name="phoneNumber"/> </td>
+				</tr>
+				<tr>
+					<td>快递公司：<input type="text" name="deliverCompany"/> </td>
+				</tr>
+				<tr>
+					<td>快递单号：<input type="text" name="deliverNumber"/> </td>
 				</tr>
 				<tr>
 					<td>
@@ -304,7 +316,7 @@
 					<td>备注：<textarea rows="5" cols="50" ></textarea> </td>
 				</tr>
 				<tr>
-					<td colspan="2" id="newOrderButton">
+					<td colspan="2" id="saveModifyButton">
 						<input type="submit" value="保存" name="save">
 					</td>
 				</tr>
