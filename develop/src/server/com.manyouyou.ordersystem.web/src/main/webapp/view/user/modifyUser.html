@@ -203,7 +203,7 @@
 	background-color: #f8ffee;
 }
 
-.newProduct{
+.modifyUser{
 	margin-top: -130px;
 	margin-left: 80px;
 	margin-right: 600px;
@@ -212,7 +212,7 @@
 	#text-align: center;
 }
 
-.newProduct table{
+.modifyUser table{
 	width: 100%;
 	#border:  1px solid black;
 	margin-left: 50px;
@@ -220,12 +220,12 @@
 }
 
 
-.newProduct table tr td:nth-child(odd){
+.modifyUser table tr td:nth-child(odd){
 	text-align: right;
 	#border: 1px solid black;
 }
 
-.newProduct table tr td:nth-child(even){
+.modifyUser table tr td:nth-child(even){
 	text-align: left;
 	#border: 1px solid black;
 }
@@ -235,17 +235,13 @@
 	
 }
 
-#backupArea span{
-	margin-left: 135px;
-}
-
-#newProductButton{
+#modifyUserButton{
 	line-height: 30px;
 	text-align: center;
 	
 }
 
-#newProductButton input{
+#modifyUserButton input{
 	width: 60px;
 	margin-top: 10px;
 }
@@ -271,50 +267,30 @@
 	<div class="leftdiv">
 		<table>
 			<tr>
-				<td id="myorder">产品查询</td> 
+				<td id="myorder">我的主页</td> 
 			</tr>
 			<tr>
-				<td id="neworder">产品新增</td> 
+				<td id="neworder">修改密码</td> 
 			</tr>
 		</table>
 	</div>
 	<!-- 新增产品页面 -->
-	<div class="newProduct">
+	<div class="modifyUser">
 		<form action="" method="post">
 			<table cellpadding="0" cellspacing="0" id="querytable">
 				<tr>
-					<td>产品：</td>
+					<td>用户名：</td>
 					<td><input type="text" name="productName"> </td>
 				</tr>
 				<tr>
-					<td>单价：</td>
-					<td>
-						<input type="text" value=""/>元
-					</td>
-				</tr>
-				<tr>
-					<td>规格：</td>
+					<td>联系方式：</td>
 					<td>
 						<input type="text" value=""/>
 					</td>
 				</tr>
+				
 				<tr>
-					<td>库存：</td>
-					<td>
-						<input type="text" value=""/>
-					</td>
-				</tr>
-				<tr>
-					<td>进货日期：</td>
-					<td>
-						<input type="text" value=""/>
-					</td>
-				</tr>
-				<tr>
-					<td colspan="2" id="backupArea"><span>备注：<textarea rows="5" cols="50" ></textarea> </span></td>
-				</tr>
-				<tr>
-					<td colspan="2" id="newProductButton">
+					<td colspan="2" id="modifyUserButton">
 						<input type="submit" value="保存" name="save">
 					</td>
 				</tr>

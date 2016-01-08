@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+
+/* 头部样式*/
+.loginHead {
+	border: 100px outset black;
+	border-bottom-color: #fc5151;
+	border-background: #f4fdff;
+	background-color: #cfffa4;
+}
+/*整个页面的背景样式*/
+body {
+	background-color: #e8ffef
+}
+
+/*表单样式*/
+form table{
+	width: 100%
+}
+
+form table td{
+	width: 50%
+}
+
+.right_td{
+	align-content: center;
+	width: 50%;
+	
+}
+
+.left_td{
+	align-content:center
+}
+
+
+.registUser{
+	margin-top: 100px;
+	
+}
+
+.registUser table{
+	width: 100%;
+}
+.registUser table td:nth-child(odd){
+	text-align: right;
+	width: 50%;
+}
+
+.registUser table td:nth-child(even){
+	text-align: left;
+	width: 50%;
+}
+
+
+#registButton{
+	line-height: 40px;
+	text-align: center;
+}
+
+</style>
+</head>
+<body style="">
+	<div class="loginHead">
+		<p align="center" style="font: 4">welcome to order manager system</p>
+
+	</div>
+	<div style="margin-top: 100px" class="registUser">
+		<form action="" method="post" accept-charset="utf-8">
+			<table>
+				<tr>
+					<td>用户名:</td>
+					<td><input type="text" name="name" /></td>
+				</tr>
+				<tr>
+					<td>密码:</td>
+					<td><input type="password" name="password" /></td>
+				</tr>
+				<tr>
+					<td>确认密码:</td>
+					<td><input type="password" name="confirm" /></td>
+				</tr>
+				<tr>
+					<td>联系方式:</td>
+					<td><input type="password" name="phoneNumber" /></td>
+				</tr>
+				<tr>
+					<td id="registButton"  colspan="2">
+						<input type="button" value="重置"/>
+						<input type="submit" value="注册"/>
+					</td>		
+				</tr>
+			</table>
+					</form>
+
+	</div>
+</body>
+</html>
