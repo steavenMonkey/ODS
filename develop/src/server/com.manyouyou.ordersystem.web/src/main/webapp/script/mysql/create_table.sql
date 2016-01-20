@@ -16,14 +16,14 @@ create table userinfo (
   drop table if exists customerinfo;
   create table customerinfo (
 	  customerid int not null,
-	  custormername varchar(45) null,
+	  customername varchar(45) null,
 	  phonenum varchar(45) null,
 	  remark varchar(200) null,
 	  extend3 varchar(45) null,
 	  extend1 varchar(45) null,
 	  extend2 varchar(45) null,
 	  constraint pk_customerinfo_customerid primary key(customerid),
-	  constraint uk_customerinfo_custormername unique(custormername)
+	  constraint uk_customerinfo_customername unique(customername)
  );
   alter table customerinfo modify customerid int auto_increment;
 
@@ -32,14 +32,14 @@ create table userinfo (
   drop table if exists addressinfo;
   create table addressinfo (
   addressid int not null,
-  custormerid int null,
-  adddress varchar(200) null,
+  customerid int null,
+  address varchar(200) null,
   remark varchar(200) null,
   extend1 varchar(45) null,
   extend2 varchar(45) null,
   extend3 varchar(45) null,
   constraint pk_addressinfo_addressid primary key(addressid),
-  constraint fk_addressinfo_custormerid foreign key (custormerid) references customerinfo(customerid)
+  constraint fk_addressinfo_customerid foreign key (customerid) references customerinfo(customerid)
  );
   
 alter table addressinfo modify addressid int auto_increment;
@@ -51,9 +51,9 @@ alter table addressinfo modify addressid int auto_increment;
   productid int not null,
   productname varchar(45) null,
   price varchar(45) not null default 0,
-  stadard varchar(45) not null,
-  storenum varchar(45) null default 0,
-  salenum varchar(45) null default 0,
+  standard varchar(45) not null,
+  storenum int(45) null default 0,
+  salenum int(45) null default 0,
   remark varchar(200) null,
   constraint pk_productinfo_productid primary key(productid),
   constraint uk_productinfo_productname unique(productname)
@@ -65,9 +65,9 @@ alter table productinfo modify productid int auto_increment;
   create table orderinfo (
 	  orderid int not null,
 	  productid int not null,
-	  ordernum varchar(45) not null,
+	  ordernum int(45) not null,
 	  consumername varchar(45) not null,
-	  receiveadrress varchar(200) not null,
+	  receiveaddress varchar(200) not null,
 	  cphonenum varchar(45) not null,
 	  hasdeliver int null default 0,
 	  haspay int null default 0,
