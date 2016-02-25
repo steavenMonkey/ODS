@@ -2,6 +2,13 @@ package com.manyouyou.ordersystem.model;
 
 import java.io.Serializable;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="userinfo")
 public class UserInfoModel implements Serializable{
 
 	/**
@@ -15,13 +22,15 @@ public class UserInfoModel implements Serializable{
 	private String phoneNum;
 	
 	
-	
+	@Id
 	public int getUserId() {
 		return userId;
 	}
 	public void setUserId(int userId) {
 		this.userId = userId;
 	}
+	
+	@Column(name="username")
 	public String getName() {
 		return name;
 	}

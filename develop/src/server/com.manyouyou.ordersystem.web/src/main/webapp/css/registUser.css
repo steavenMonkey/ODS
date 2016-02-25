@@ -55,3 +55,11 @@ form table td{
 	line-height: 40px;
 	text-align: center;
 }
+
+.registErrDiv{
+	text-align: center;
+}
+
+.registErrDiv span{
+	color: red;
+}

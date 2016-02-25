@@ -3,6 +3,11 @@ package com.manyouyou.ordersystem.model;
 import java.io.Serializable;
 import java.util.Date;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="orderinfo")
 public class OrderModel implements Serializable{
 
 	/**
@@ -22,7 +27,7 @@ public class OrderModel implements Serializable{
 	  private String deliverCompany;
 	  private String deliverNum;
 	  private String remark;//备注
-	  private int salerId;//卖家ID
+	  private int salerId;//卖家ID,对应userId
 	public int getOrderId() {
 		return orderId;
 	}

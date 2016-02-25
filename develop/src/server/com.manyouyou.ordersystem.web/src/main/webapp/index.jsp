@@ -1,3 +1,4 @@
+<%@page import="com.manyouyou.ordersystem.commons.ResponseConstant"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%
@@ -20,12 +21,17 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 <script type="text/javascript">
 	
+	var $name;//设置全局变量
+	var $nameError;
+	var $password;
+	var $passwordError;
 	$(function(){
-
-		var $name = $("#name");
-		var $password = $("#password");
-		var $nameError = $("#nameError");
-		var $passwordError = $("#passwordError");
+		$name = $("#name");
+		$password = $("#password");
+		$nameError = $("#nameError");
+		$passwordError = $("#passwordError");
+		var $submit = $("#submit");
+		var $loginForm = $("#loginForm");
 		//console.info($name);
 		//name输入框绑定鼠标焦点事件，当焦点离开时触发
 		 $name.blur(function() {
@@ -43,19 +49,36 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			//$.post("user/regist.do",function(data){},"json");
 			window.location.href="view/user/registUser.jsp";
 		});
+		
 	});
 	
-	
+
+	/*提交表单前先校验用户名和密码是否为空*/
+	function checkOnsubmit(){
+		var nameValue = $name.val();
+		var pwdValue = $password.val();
+		if(isNullOrBlank(nameValue)){
+			$nameError.html("用户名不能为空");
+			$nameError.css("color","red");
+			return false;
+		}else if(isNullOrBlank(pwdValue)){
+			$passwordError.html("密码不能为空");
+			$passwordError.css("color","red");
+			return false;
+		}else{
+			return true;
+		}
+	}
 	
 </script>
  </head>
-<body style="">
+<body>
 	<div class="loginHead">
 		<p align="center" style="font: 4">welcome to order manager system</p>
 
 	</div>
-	<div style="margin-top: 100px" class="logindiv">
-		<form action="user/login.do" method="post" accept-charset="utf-8">
+	<div class="logindiv">
+		<form action="user/login.do" method="post" accept-charset="utf-8" onsubmit="return checkOnsubmit()">
 			<table>
 				<tr>
 					<td>username:</td>
@@ -76,12 +99,16 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						<input type="button" value="regist" id="regist"/>
 					</td>
 					<td>
-						<input type="submit" value="submit"/>
+						<input type="submit" value="submit" id="submit"/>
 					</td>		
 				</tr>
 			</table>
 		</form>
-
+	</div>
+	<div class="loginErrorDiv">
+		<span>
+			<%=request.getAttribute(ResponseConstant.RSP_ATTR_LOGIN_ERROR)==null ? "":request.getAttribute(ResponseConstant.RSP_ATTR_LOGIN_ERROR) %>
+		</span>
 	</div>
 </body>
 </html>

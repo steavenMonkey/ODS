@@ -2,7 +2,7 @@ package com.manyouyou.ordersystem.dao;
 
 import com.manyouyou.ordersystem.model.UserInfoModel;
 
-public interface IUserManager extends IDao{
+public interface IUserManagerDao extends IDao{
 	
 	/**
 	 * 新增用户

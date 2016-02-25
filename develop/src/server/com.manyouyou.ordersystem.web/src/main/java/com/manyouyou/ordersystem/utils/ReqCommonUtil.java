@@ -1,4 +1,4 @@
-package com.manyouyou.ordersystem.commons;
+package com.manyouyou.ordersystem.utils;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;

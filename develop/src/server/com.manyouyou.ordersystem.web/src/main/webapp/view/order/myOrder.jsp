@@ -17,7 +17,7 @@
 			var $firstpage = $("#firstpage");
 			var $order = $("#order");
 			var $product = $("#product");
-			var $logout = $("#logout");
+			var $logout = $("#userManager");
 			var $myorder = $("#myorder");
 			var $orderquery = $("#orderquery");
 			var $neworder = $("#neworder");
@@ -42,9 +42,9 @@
 			});
 			//鼠标划过注销用户，改变其背景颜色
 			$logout.hover(function() {
-				changeBackgroundColor("logout", "#699dff")
+				changeBackgroundColor("userManager", "#699dff")
 			}, function() {
-				changeBackgroundColor("logout", "#e8ffef")
+				changeBackgroundColor("userManager", "#e8ffef")
 			});
 			//鼠标划过我的订单，改变其背景颜色
 			$myorder.hover(function() {
@@ -80,13 +80,14 @@
 	<div class="topdiv">
 		<table>
 			<tr>
-				<td colspan="4" id="ftd">welcome ${user.name}</td>
+				<td colspan="4" id="ftd">welcome ${user.name} <a>退出登录</a> </td>
 			</tr>
 			<tr>
 				<td id="firstpage">首页</td>
 				<td id="order">订单管理</td>
 				<td id="product">产品管理</td>
-				<td id="logout">注销用户</td>
+				<td id="userManager">用户管理</td>
+<!-- 				<td id="logout">注销用户</td> -->
 			</tr>
 		</table>
 	</div>

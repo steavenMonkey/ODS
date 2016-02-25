@@ -21,7 +21,7 @@ public class OrderController {
 		List<OrderModel> myOrderList = new ArrayList<OrderModel>();
 		UserInfoModel user = (UserInfoModel) map.get(RequestConstant.MODELMAP_ATTR_USER);
 		System.out.println(user);
-		
+		//根据用户名ID查找订单列表
 		map.addAttribute("myOrderList", myOrderList);
 		
 		return ResponseConstant.RSP_PAGE_ORDER_MYORDER;

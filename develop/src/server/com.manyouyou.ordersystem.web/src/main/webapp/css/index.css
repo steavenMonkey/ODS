@@ -55,3 +55,12 @@ form table td{
 	line-height: 40px;
 	text-align: center;
 }
+
+
+.loginErrorDiv{
+	text-align: center;
+}
+
+.loginErrorDiv span{
+	color: red;
+}

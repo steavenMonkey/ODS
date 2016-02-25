@@ -3,7 +3,7 @@
 drop table if exists userinfo;
 create table userinfo (
 	  userid int not null ,
-	  username varchar(45) null,
+	  username varchar(45) not null,
 	  password varchar(45) not null,
 	  phonenum varchar(45) null,
 	  constraint pk_userinfo_userid primary key(userid),

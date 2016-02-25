@@ -1,3 +1,4 @@
+<%@page import="com.manyouyou.ordersystem.commons.ResponseConstant"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%
@@ -10,29 +11,40 @@
 <html>
 <head>
 <base href="<%=basePath%>">
-<title>标题</title>
+<title>用户注册</title>
 <meta http-equiv="pragma" content="no-cache">
 <meta http-equiv="cache-control" content="no-cache">
 <meta http-equiv="expires" content="0">
 <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 <meta http-equiv="description" content="This is my page">
 
-<link href="css/newUser.css" rel="stylesheet" type="text/css"/>
+<link href="css/registUser.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="js/jquery-1.11.3.js"></script>
 <script type="text/javascript" src="js/common.js"></script>
 <script type="text/javascript">
+
+	var $name;
+	var $password;
+	var $confirm;
+	var $phoneNum;
+	
+	var $nameErr;
+	var $passwordErr;
+	var $confirmErr;
+	var $phoneNumErr;
+	
 	$(function(){
 		var $resetButt = $("#resetButt");
 		var $registButt = $("#registButt");
-		var $name = $("#name");
-		var $password = $("#password");
-		var $confirm = $("#confirm");
-		var $phoneNum = $("#phoneNum");
+		$name = $("#name");
+		$password = $("#password");
+		$confirm = $("#confirm");
+		$phoneNum = $("#phoneNum");
 		//span element
-		var $nameErr = $("#nameErr");
-		var $passwordErr = $("#passwordErr");
-		var $confirmErr = $("#confirmErr");
-		var $phoneNumErr = $("#phoneNumErr");
+		$nameErr = $("#nameErr");
+		$passwordErr = $("#passwordErr");
+		$confirmErr = $("#confirmErr");
+		$phoneNumErr = $("#phoneNumErr");
 		
 		/*重置按钮，清除所有输入框的内容*/
 		$resetButt.click(function(){
@@ -60,13 +72,35 @@
 			var $confirmVal = $confirm.val();
 			console.info($confirmVal.trim().length);
 			if( $confirmVal.trim().length >0 && $passwordVal != $confirmVal){
-				$confirmErr.html("the password is not the same");
+				$confirmErr.html("两次密码不一致");
 				$confirmErr.css("color","red");
 			}else{
 				validate($confirm,$confirmErr)
 			}
 		});
 		
+		function checkOnSubmit(){
+			var nameValue = $name.val();
+			var pwdValue = $password.val();
+			var confirmValue = $confirm.val();
+			var phoneNumValue = $phoneNum.val();
+			
+			if(isNullOrBlank(nameValue)){
+				appendErrMsg($nameErr, "用户名不能为空")
+				return false;
+			}else if(isNullOrBlank(pwdValue)){
+				appendErrMsg($passwordErr, "密码不能为空")
+				return false;
+			}else if(isNullOrBlank(confirmValue)){
+				appendErrMsg($confirmErr, "确认密码不能为空");
+				return false;
+			}else if(isNullOrBlank(phoneNumValue)){
+				appendErrMsg($phoneNumErr, "联系方式不能为空");
+				return false
+			}else{
+				return true;
+			}
+		}
 		
 	});
 	
@@ -78,7 +112,7 @@
 		<p align="center" style="font: 4">welcome to order manager system</p>
 	</div>
 	<div class="registUser">
-		<form action="user/regist.do" method="post" accept-charset="utf-8">
+		<form action="user/regist.do" method="post" accept-charset="utf-8" onsubmit="return checkOnSubmit()">
 			<table>
 				<tr>
 					<td>用户名:</td>
@@ -104,7 +138,7 @@
 				<tr>
 					<td>联系方式:</td>
 					<td>
-						<input type="password" name="phoneNumber" id="phoneNum"/>
+						<input name="phoneNumber" id="phoneNum"/>
 						<span id="phoneNumErr"></span>
 					</td>
 				</tr>
@@ -116,6 +150,11 @@
 				</tr>
 			</table>
 		</form>
+	</div>
+	<div class="registErrDiv">
+		<span>
+			<%=request.getAttribute(ResponseConstant.RSP_ATTR_LOGIN_ERROR)==null ? "":request.getAttribute(ResponseConstant.RSP_ATTR_REGIST_ERROR) %>
+		</span>
 	</div>
 </body>
 </html>

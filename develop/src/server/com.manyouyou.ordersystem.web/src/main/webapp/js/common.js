@@ -35,3 +35,27 @@ function inputValidate(element,spanEle){
 		validate(element,spanEle);
 	});
 }
+
+/**
+ * 判断字符串是否为空或null
+ * @param str
+ */
+function isNullOrBlank(str){
+	if(null != str && $.trim(str).length>0){
+		return false;
+	}else{
+		return true;
+	}
+}
+
+
+/**
+ * 添加错误提示
+ * @param errorSpan
+ * @param msg
+ */
+function appendErrMsg(errorSpan,msg){
+	errorSpan.html(msg);
+	errorSpan.css("color","red");
+}
+
