@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>使用javascript改变CSS样式</title>
+
+<style type="text/css">
+	
+	.up{
+		width: 160px;
+		text-align: center;
+		border-right: #222 3px solid;
+		border-top: #ddd 3px solid;
+		border-left: #ddd 3px solid;
+		border-bottom: #222 3px solid;
+		background-color: #ccc;
+		
+	}
+</style>
+
+<script type="text/javascript">
+
+	function changeBackColor(){
+		var colorValue = "";
+		for(var i=0;i<6;i++){
+			colorValue += "" + Math.round(Math.random() * 9);
+		}
+		document.body.style.backgroundColor="#" + colorValue;
+	}
+	
+	function chgStyle(){
+		document.getElementById("toBechg").className="up";
+	}
+</script>
+</head>
+<body>
+	
+	<button onclick="changeBackColor()">点击改变页面背景颜色</button><br>
+	
+	<button onclick="chgStyle()">增加立体效果</button>
+	<div id="toBechg">增加立体效果后的div</div>
+	
+</body>
+</html>

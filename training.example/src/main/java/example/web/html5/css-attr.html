@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style type="text/css">
+
+/* 对所有div起作用的样式*/
+div {
+	width: 300px;
+	height: 30px;
+	background-color: #eee;
+	border: 1px solid black;	
+}
+/*对有id属性的div起作用的样式*/
+div[id] {
+	background-color: blue;
+}
+
+/*对id属性值包含xx的div元素起作用的样式*/
+div[id*=xx] {
+	background-color: green;
+}
+
+/*对id属性值以xx开头的div元素起作用*/
+div[id^=xx] {
+	background-color: fuchsia;
+}
+/*对id属性值为xx的元素起作用的样式*/
+div[id=xx] {
+	background-color: olive;
+}
+
+/*ID 选择器 idvalue｛｝， eg：对id属性值为a的起作用的样式  */
+#id选择器{
+	background-color: yellow; 
+	font-style: italic;
+	border: 2px dotted black;
+}
+
+/*E#idvalue{} 只对指定元素起作用的id选择器"*/
+p#id选择器{
+	border: 1px dashed red;
+	background-color: lime;
+}
+
+/*[E].classvalue{} class 选择器的格式，其中E可以省略*/
+.class选择器{
+	background-color: aqua;
+	border-left: thin 2px;
+}
+
+
+/*selector1 selector2 {} 包含选择器,其中selector1 、selector2 都是有效选择器，用于指定目标选择器必须处于某个选择器内部*/
+div{
+	height: 60px;
+	width: 350px;
+	background-color: #ddd;
+	margin: 5px;
+}
+
+div #包含选择器.包含选择器{
+	height: 200px;
+	width: 80px;
+	border: 2px dotted black;
+	background-color: #888;
+}
+/*selector1 selector2 {} 包含选择器,其中selector1 、selector2 都是有效选择器，用于指定目标选择器必须处于某个选择器内部*/
+＃子选择器选择器{
+	height: 60px;
+	width: 350px;
+	background-color: #ddd;
+	margin: 5px;
+}
+
+div>.子选择器选择器{
+	height: 200px;
+	width: 80px;
+	border: 2px dotted black;
+	background-color: #888;
+}
+
+
+/*CSS3 新增的兄弟选择器 selector～selector2｛｝ 匹配selector对应元素后看能匹配selector2的兄弟元素*/
+#兄弟选择器~.兄弟选择器 {
+	background-color: green;
+}
+</style>
+</head>
+<body>
+	<div>没有任何属性的div元素</div>
+	<div id="a">带id属性的div元素</div>
+	<div id="zzxxzz">id属性包含xx子字符串的元素</div>
+	<div id="xxyy">id属性值以xx开头的div元素</div>
+	<div id="xx">id属性值为xx的元素</div>
+	<div id="id选择器">使用id选择器的元素</div>
+	<p id="id选择器">使用只对指定元素起作用的id选择器</p>
+	<div class="class选择器">使用class选择器的元素</div>
+	<div id="包含选择器">
+		<div id="非包含选择器">非包含选择器</div>
+		<div class="包含选择器">包含选择器</div>
+	</div><br>
+	<div id="子选择器选择器">
+		<div id="非子选择器选择器">非子选择器选择器</div>
+		<div class="子选择器选择器">子选择器选择器</div>
+	</div><br>
+	
+	<div>没有匹配兄弟选择器的元素</div>
+	<div id="兄弟选择器">id=兄弟选择器</div>
+	<div class="兄弟选择器">class=兄弟选择器</div>
+	
+	
+</body>
+</html>
