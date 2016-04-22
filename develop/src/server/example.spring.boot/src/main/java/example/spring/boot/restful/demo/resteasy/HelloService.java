@@ -33,4 +33,11 @@ public class HelloService {
 	}
 	
 	
+	@GET
+	@Path("h/{name}/{id}")//传多个参数
+	public String h(@PathParam("name")String name, @PathParam("id") String id){
+		
+		return name + " " + id;
+	}
+	
 }
