@@ -1,0 +1,5 @@
+Srping Boot默认使用logback作为日志工具，要是想覆盖logback的配置则在src/main/resources目录下添加名为base.xml lockback配置
+要是想使用log4j作为代替logback，则只需要把log4j加入classpath即可，具体参见pom.xml的配置，然后在resources目录下添加log4j.properties配置文件
+要注意的是log4j2只支持log4j.xml，而log4j支持log4j.properties和log4j.xml
+
+虽然spring boot支持java 的logging，但是官方不建议使用，因为它可能会产生问题。
