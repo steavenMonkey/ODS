@@ -48,7 +48,19 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter</artifactId>
+			<exclusions>
+			<!-- add for log4j -->
+<!-- 				<exclusion> -->
+<!-- 					<groupId>org.springframework.boot</groupId> -->
+<!-- 					<artifactId>spring-boot-starter-logging</artifactId> -->
+<!-- 				</exclusion> -->
+			</exclusions>
 		</dependency>
+		<!-- 想用log4只需要把log4j加入到classpath即可，log4j2只能用*.xml配置，如果是log4j则可以使用*.properties和*.xml -->
+<!-- 		<dependency> -->
+<!-- 			<groupId>org.springframework.boot</groupId> -->
+<!-- 			<artifactId>spring-boot-starter-log4j</artifactId> -->
+<!-- 		</dependency> -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-webmvc</artifactId>
@@ -82,22 +94,29 @@
 			<artifactId>resteasy-spring</artifactId>
 			<version>${resteasy.version}</version>
 			<exclusions>
-<!-- 				<exclusion> -->
-<!-- 					<artifactId>resteasy-jettison-provider</artifactId> -->
-<!-- 					<groupId>org.jboss.resteasy</groupId> -->
-<!-- 				</exclusion> -->
-<!-- 				<exclusion> -->
-<!-- 					<artifactId>jcip-annotations</artifactId> -->
-<!-- 					<groupId>net.jcip</groupId> -->
-<!-- 				</exclusion> -->
+				<!-- <exclusion> -->
+				<!-- <artifactId>resteasy-jettison-provider</artifactId> -->
+				<!-- <groupId>org.jboss.resteasy</groupId> -->
+				<!-- </exclusion> -->
+				<!-- <exclusion> -->
+				<!-- <artifactId>jcip-annotations</artifactId> -->
+				<!-- <groupId>net.jcip</groupId> -->
+				<!-- </exclusion> -->
 			</exclusions>
 		</dependency>
-		
-		<!-- 对象以json形式输出，需要使用该jar，否则会报Could not find MessageBodyWriter for response object of type -->
+
+		<!-- 对象以json形式输出，需要使用该jar，否则会报Could not find MessageBodyWriter for response 
+			object of type -->
 		<dependency>
 			<groupId>org.jboss.resteasy</groupId>
 			<artifactId>resteasy-jackson-provider</artifactId>
 			<version>${resteasy.version}</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
 		</dependency>
 	</dependencies>
 

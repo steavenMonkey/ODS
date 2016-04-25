@@ -13,7 +13,7 @@ public class SampleController {
 
     @RequestMapping("/")
     @ResponseBody
-    String home() {
+    String hello() {
         return "Hello World!";
     }
     

@@ -21,7 +21,7 @@ public class HelloService {
 	@GET
 	@Path("/{name}")//直接传参数，在uri中不要再?name=XXX,与jersey不同
 	public String getUserName(@PathParam("name") String name){
-		return "hello " + name;
+		return name;
 	}
 	
 	
