@@ -1,4 +1,4 @@
-package example.spring.boot.log.sample;
+package example.spring.boot.demo.log;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;

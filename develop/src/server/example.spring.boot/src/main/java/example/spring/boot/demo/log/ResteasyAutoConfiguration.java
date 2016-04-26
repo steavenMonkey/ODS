@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package example.spring.boot.log.sample;
+package example.spring.boot.demo.log;
 
 import org.jboss.resteasy.plugins.spring.SpringBeanProcessor;
 import org.jboss.resteasy.spi.ResteasyDeployment;
