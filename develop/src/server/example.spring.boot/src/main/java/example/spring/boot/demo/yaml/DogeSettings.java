@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Configuration;
 //任何被@ConfigurationProperties注解的beans将自动被Environment属性配置。
 //这种风格的配置特别适合与SpringApplication的外部YAML配置进行配合使用。
 @EnableConfigurationProperties
-@ConfigurationProperties(prefix="doge")
+@ConfigurationProperties(prefix="doge")//自动装配yml文件
 public class DogeSettings {
 //	  wow: 10
 //	  such: so
@@ -18,6 +18,7 @@ public class DogeSettings {
 	private int wow;
 	private String such;
 	private boolean very;
+	
 	public int getWow() {
 		return wow;
 	}
