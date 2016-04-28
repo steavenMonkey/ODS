@@ -40,6 +40,17 @@
 						<version>1.2.3.RELEASE</version>
 					</dependency>
 				</dependencies>
+				<!-- 如果spring boot项目有多个application的main入口，则在编译的时候需要指定一个入口，在真正起作用的也只有该入口 -->
+				<configuration>
+					<mainClass>example.spring.boot.sample.SampleController</mainClass>
+				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>repackage</goal>
+						</goals>
+					</execution>
+				</executions>
 			</plugin>
 		</plugins>
 	</build>
@@ -49,18 +60,18 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter</artifactId>
 			<exclusions>
-			<!-- add for log4j -->
-<!-- 				<exclusion> -->
-<!-- 					<groupId>org.springframework.boot</groupId> -->
-<!-- 					<artifactId>spring-boot-starter-logging</artifactId> -->
-<!-- 				</exclusion> -->
+				<!-- add for log4j -->
+				<!-- <exclusion> -->
+				<!-- <groupId>org.springframework.boot</groupId> -->
+				<!-- <artifactId>spring-boot-starter-logging</artifactId> -->
+				<!-- </exclusion> -->
 			</exclusions>
 		</dependency>
 		<!-- 想用log4只需要把log4j加入到classpath即可，log4j2只能用*.xml配置，如果是log4j则可以使用*.properties和*.xml -->
-<!-- 		<dependency> -->
-<!-- 			<groupId>org.springframework.boot</groupId> -->
-<!-- 			<artifactId>spring-boot-starter-log4j</artifactId> -->
-<!-- 		</dependency> -->
+		<!-- <dependency> -->
+		<!-- <groupId>org.springframework.boot</groupId> -->
+		<!-- <artifactId>spring-boot-starter-log4j</artifactId> -->
+		<!-- </dependency> -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-webmvc</artifactId>
@@ -112,18 +123,18 @@
 			<artifactId>resteasy-jackson-provider</artifactId>
 			<version>${resteasy.version}</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-<!-- 		<dependency> -->
-<!--             <groupId>org.testng</groupId> -->
-<!--             <artifactId>testng</artifactId> -->
-<!--             <version>6.8.8</version> -->
-<!--             <scope>test</scope> -->
-<!--         </dependency> -->
+		<!-- <dependency> -->
+		<!-- <groupId>org.testng</groupId> -->
+		<!-- <artifactId>testng</artifactId> -->
+		<!-- <version>6.8.8</version> -->
+		<!-- <scope>test</scope> -->
+		<!-- </dependency> -->
 	</dependencies>
 
 </project>
