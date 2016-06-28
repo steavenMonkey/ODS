@@ -135,6 +135,12 @@
 		<!-- <version>6.8.8</version> -->
 		<!-- <scope>test</scope> -->
 		<!-- </dependency> -->
+
+<!-- 添加thymeleaf模版引擎支持 -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-thymeleaf</artifactId>
+		</dependency>
 	</dependencies>
 
 </project>
