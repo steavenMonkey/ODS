@@ -14,6 +14,8 @@
 
 package example.spring.boot.hibernate;
 
+import java.util.List;
+
 import org.springframework.data.repository.CrudRepository;
 
 /**
@@ -22,9 +24,21 @@ import org.springframework.data.repository.CrudRepository;
  * @author yourname (mailto:yourname@primeton.com)
  */
 
-public interface UserDao extends CrudRepository<UserEntity, String>{
+public interface UserDao{
 	
-	
+	 public void create(UserEntity user);
+	 
+	 public void delete(UserEntity user);
+	 
+	 public List<UserEntity> getAll();
+	 
+	 public UserEntity findUserByName(String name);
+	 
+	 public UserEntity getByEmail(String email);
+	 
+	 public UserEntity getById(long id);
+	 
+	 public void update(UserEntity user);
 }
 
 /*

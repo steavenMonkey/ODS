@@ -21,7 +21,7 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 @Transactional
-public class UserRepository  {
+public class UserRepository  implements UserDao{
 	
 	// Private fields
 	  
@@ -58,7 +58,7 @@ public class UserRepository  {
   }
   
   public UserEntity findUserByName(String name){
-	  Query query = entityManager.createNativeQuery("select * from user where username=?", UserEntity.class);
+	  Query query = entityManager.createNativeQuery("select userid, username, password, phone, email, rolename, createdate, modifydate, lastlogindate, openid from user where username=?", UserEntity.class);
 	  query.setParameter(1, name);
 	  return (UserEntity) query.getSingleResult();
   }

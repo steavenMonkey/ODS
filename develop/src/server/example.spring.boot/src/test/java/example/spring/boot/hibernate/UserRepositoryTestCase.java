@@ -39,7 +39,7 @@ import example.spring.boot.restful.demo.resteasy.User;
 public class UserRepositoryTestCase {
 	
 	@Autowired
-	private UserRepository userRepository;
+	private UserDao userRepository;
 	/*
 	 * CREATE TABLE `showmecoo`.`user` (
   `userid` VARCHAR(45) NOT NULL,
@@ -59,7 +59,7 @@ public class UserRepositoryTestCase {
 	public void testCreate(){
 		UserEntity user = new UserEntity();
 //		user.setUserId("1");
-		user.setUserName("mac");
+		user.setUserName("mac1");
 		user.setPassword("1234");
 		user.setPhone("123456789");
 		user.setEmail("ss@aa.com");
@@ -109,7 +109,7 @@ public class UserRepositoryTestCase {
 	@Test
 	@Rollback(false)
 	public void testDelete(){
-		UserEntity user = userRepository.findUserByName("mac");
+		UserEntity user = userRepository.findUserByName("mac1");
 		userRepository.delete(user);
 	}
 	
