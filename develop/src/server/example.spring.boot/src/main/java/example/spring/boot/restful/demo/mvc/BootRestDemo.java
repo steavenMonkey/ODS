@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
-@ComponentScan("example.spring.boot.restful")
+@ComponentScan("example.spring.boot.restful.demo.mvc")
 public class BootRestDemo {
 	
 	public static void main(String[] args) {
